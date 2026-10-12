@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ColliderGen/ColliderGen.csproj" />
+    <Project Path="src/ColliderGen.Cli/ColliderGen.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ColliderGen.Tests/ColliderGen.Tests.csproj" />
+  </Folder>
+</Solution>

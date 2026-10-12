@@ -1,0 +1,15 @@
+# Glossary
+
+Domain terms used in the code, tests and README.
+
+| Term               | Description                                                                                                                                                                                                                                                    |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprite**         | An image with an alpha channel (a PNG in the CLI, raw RGBA bytes in the library), the input to collider generation.                                                                                                                                            |
+| **Frame**          | One animation cell of a sprite. A still sprite has one frame; a strip has several, each with its own hull.                                                                                                                                                     |
+| **Strip**          | A sprite whose frames sit side by side, left to right, at equal width. Without an explicit frame width, a sprite whose width is an exact multiple (> 1) of its height is read as a strip of square frames.                                                     |
+| **Solid pixel**    | A pixel whose alpha is at or above the alpha threshold. The set of solid pixels in a frame is its mask.                                                                                                                                                        |
+| **Hull**           | The convex polygon that wraps a frame's solid pixels, including each pixel's full square so it reaches the sprite's outer pixel edges. Has 3 to 16 vertices (`ColliderOptions.MinVerticesLimit`/`MaxVerticesLimit`), or none for a frame without solid pixels. |
+| **Collider**       | The result for a whole sprite (`SpriteCollider`): one hull per frame, plus the resolved frame width and origin.                                                                                                                                                |
+| **Origin**         | The point in a frame that hull coordinates are measured from: `Center` (frame centre) or `TopLeft`. Hull vertices are frame-local, relative to the origin.                                                                                                     |
+| **Fit**            | How simplification treats the sprite: `Inner` cuts corners, so the collider can lie slightly inside the sprite; `Outer` only grows the hull, so the collider encloses every solid pixel.                                                                       |
+| **Simplification** | Reducing hull vertices cheapest-first, while the cost is within epsilon, then while over the cap. Inner fit (Visvalingam–Whyatt) drops vertices (cost: triangle area); outer fit extends an edge's neighbours to meet (cost: added area).                      |
