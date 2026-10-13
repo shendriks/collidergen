@@ -1,5 +1,8 @@
 # ColliderGen
 
+[![CI](https://github.com/shendriks/collidergen/actions/workflows/ci.yml/badge.svg)](https://github.com/shendriks/collidergen/actions/workflows/ci.yml)
+[![Dependabot Updates](https://github.com/shendriks/collidergen/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/shendriks/collidergen/actions/workflows/dependabot/dependabot-updates)
+
 ColliderGen is an offline tool that derives a convex-hull collider from a sprite. It reads the alpha channel of a PNG and 
 builds a convex polygon around the solid pixels. The resulting polygon has at most 16 vertices.
 
@@ -24,6 +27,8 @@ There are two ways to simplify:
   is good for walls.
 
 The [glossary](GLOSSARY.md) explains terms like frame, strip and origin.
+
+A bit more detailed info can be found on the [project page](https://shendriks.dev/projects/collider-generator).
 
 ## Prerequisites
 
